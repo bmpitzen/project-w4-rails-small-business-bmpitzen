@@ -1,6 +1,6 @@
     <h1>View our inventory!</h1>
     <p>
-    <% @pinfo.each do |block|%>
-    <%= puts block %>
+    <% @products.each do |product|%>
+      <%= product.pid%>
     <%end%>
     </p>
