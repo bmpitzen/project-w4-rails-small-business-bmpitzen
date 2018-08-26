@@ -5,6 +5,4 @@ class Product
                 :product_box, :products
   def initialize
   end
-  def clearance
-  end
 end

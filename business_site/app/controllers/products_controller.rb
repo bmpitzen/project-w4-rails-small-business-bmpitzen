@@ -31,6 +31,18 @@ class ProductsController < ApplicationController
       product.category = row.to_h[:category]
       product_array << product
     end
-    return product_array
+    product_array.each do |product|
+      if product.condition == 'good'
+        product.price = "#{(product.price.to_i - (product.price.to_i * 0.1))}
+         On Sale! 10% off"
+      elsif  product.condition == 'average'
+        product.price = "#{(product.price.to_i - (product.price.to_i * 0.2))}
+         On Sale! 20% off"
+      else 
+        product.price
+      end
+    end
+  end
+  def clearance
   end
 end
