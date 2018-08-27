@@ -20,7 +20,7 @@
           <li><h4><%= product.item%></h4>
           <p><%= product.description%></p>
             <% if product.condition == 'good' || product.condition == 'average' %>
-              <h5 class = "text-danger"><%= product.price%></h5>
+              <h5 class = "text-success"><%= product.price%></h5>
               <% else %>
               <h5><%="$ #{product.price}"%></h5>
             <%end%>
