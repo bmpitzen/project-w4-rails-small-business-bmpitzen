@@ -37,10 +37,10 @@ class ProductsController < ApplicationController
   def clearance
     @product_array.each do |product|
       if product.condition == 'good'
-        product.price = "#{(product.price.to_i - (product.price.to_i * 0.1))}
+        product.price = "$ #{(product.price.to_i - (product.price.to_i * 0.1))}
         On Sale! 10% off"
       elsif product.condition == 'average'
-        product.price = "#{(product.price.to_i - (product.price.to_i * 0.2))}
+        product.price = "$ #{(product.price.to_i - (product.price.to_i * 0.2))}
         On Sale! 20% off"
       end
     end
