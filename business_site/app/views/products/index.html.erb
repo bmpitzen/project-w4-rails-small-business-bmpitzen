@@ -11,18 +11,24 @@
     <title>Faust Furniture</title>
   </head>
   <body>
-    <h1>View our inventory!</h1>
-    <ul>
-    <h3>Items</h3>
-    <% @products.each do |product|%>
-      <li><h4><%= product.item%></h4>
-      <p><%= product.description%></p>
-      <h5><%= product.price%></h5>
-      </li>
-    <%end%>
-    </ul>
-    <p>price</p>
-
+    <h1 class = "display-4 text-center">View our inventory!</h1>
+    <hr>
+    <div class = "product_box, container" >
+      <div class = "row">
+        <ul>
+        <% @products.each do |product|%>
+          <li><h4><%= product.item%></h4>
+          <p><%= product.description%></p>
+            <% if product.condition == 'good' || product.condition == 'average' %>
+              <h5 class = "text-danger"><%= product.price%></h5>
+              <% else %>
+              <h5><%= product.price%></h5>
+            <%end%>
+          </li>
+        <%end%>
+        </ul>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
